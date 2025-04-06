@@ -6,11 +6,15 @@
 | The routes file is used for defining the HTTP routes.
 |
 */
+import router from "@adonisjs/core/services/router";
 
-import router from '@adonisjs/core/services/router'
+const SearchQueriesController = () =>
+  import("#controllers/search_queries_controller");
 
-router.get('/', async () => {
+router.get("/", async () => {
   return {
-    hello: 'world',
-  }
-})
+    hello: "world",
+  };
+});
+
+router.post("/search-queries", [SearchQueriesController, "store"]);

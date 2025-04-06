@@ -17,4 +17,4 @@ router.get("/", async () => {
   };
 });
 
-router.post("/test", [SearchQueriesController, "store"]);
+router.post("/search-queries", [SearchQueriesController, "store"]);
